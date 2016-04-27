@@ -1,2 +1,3 @@
-﻿  TTable.cpp
+﻿  main.cpp
+c:\users\й\desktop\visual studio\tablic\tablic\tsort.h(12): warning C4091: static : пропускается слева от "TSort", когда ни одна переменная не объявлена
   tablic.vcxproj -> C:\Users\й\Desktop\Visual Studio\tablic\Debug\tablic.exe

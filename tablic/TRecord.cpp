@@ -28,6 +28,11 @@ TRecord& TRecord:: operator=(TRecord& Rec)
 	return *this;
 }
 
+char * TRecord::GetKey()
+{
+	return key;
+}
+
 TRecord::~TRecord()
 {
 	delete[] key;

@@ -27,6 +27,11 @@ TTable::TTable(TTable& Tab)
 	}
 }
 
+int TTable::GetCount()
+{
+	return count;
+}
+
 TTable& TTable:: operator=(TTable& Tab)
 {
 	if (Max_Size != Tab.Max_Size)
@@ -61,6 +66,11 @@ int TTable::Search(TRecord* Q)
 		}
 	}
 	return -1;
+}
+
+TRecord & TTable::operator[](int i)
+{
+	return table[i];
 }
 
 void TTable::Del(TRecord* Q)

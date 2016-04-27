@@ -143,11 +143,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="TRecord.h" />
+    <ClInclude Include="TSort.h" />
     <ClInclude Include="TTable.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TRecord.cpp" />
+    <ClCompile Include="TSort.cpp" />
     <ClCompile Include="TTable.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
