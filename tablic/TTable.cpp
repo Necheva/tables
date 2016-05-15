@@ -1,6 +1,8 @@
-#include "TTable.h"
+п»ї#include "TTable.h"
 #include<string.h>
 #include<iostream>
+#include<fstream>
+#include<string>
 using namespace std;
 TTable::TTable()
 {
@@ -38,7 +40,7 @@ TTable& TTable:: operator=(TTable& Tab)
 	{
 		delete[]table;
 		Max_Size = Tab.Max_Size;
-		table=new TRecord[Max_Size];
+		table = new TRecord[Max_Size];
 	}
 	count = Tab.count;
 	for (int i = 0; i < count; i++)
@@ -58,9 +60,14 @@ void TTable::Put(TRecord* Q)
 
 int TTable::Search(TRecord* Q)
 {
+	return Search(Q->key);
+}
+
+int TTable::Search(char * key)
+{
 	for (int i = 0; i < count; i++)
 	{
-		if (strcmp(table[i].key, Q->key)==0)//ключи полностью совпадают. Вычитание по символам
+		if (strcmp(table[i].key, key) == 0)
 		{
 			return i;
 		}
@@ -90,6 +97,7 @@ void TTable::Print()
 	cout << " table" << endl;
 	for (int i = 0; i < count; i++)
 	{
+		cout << "(" << i << ") ";
 		cout << table[i].key << " | " << *table[i].Data << endl;
 	}
 }
@@ -97,4 +105,30 @@ void TTable::Print()
 TTable::~TTable()
 {
 	delete[]table;
+}
+
+void TTable::L_F_F(char *FileName)
+{
+	ifstream fin(FileName);
+	string word;
+	char buf[256];
+
+	while (fin.good())
+	{
+		fin >> word;
+		strcpy(buf, word.c_str());
+
+		int T = Search(buf);
+		if (T == -1)
+		{
+			TRecord* Rec = new TRecord(buf);
+			Put(Rec);
+		}
+		else
+		{
+			table[T].Inc_Data();
+		}
+	}
+	fin.close();
+
 }

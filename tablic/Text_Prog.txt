@@ -1,0 +1,22 @@
+pragma once
+include TRecord h
+class TTable
+
+	TRecord* table
+	int count
+	int Max_Size
+public
+	TTable
+	TTable int Size
+	TTable TTable
+	int GetCount
+	TTable
+	void LFF char 
+	TTable operator TTable
+	void Put TRecord
+	void Del TRecord
+	int Search TRecord
+	int Search char
+	TRecord& operator int
+	void Print
+	friend class TSort
