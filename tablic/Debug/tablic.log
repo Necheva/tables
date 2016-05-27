@@ -1,3 +1,4 @@
-﻿  main.cpp
-c:\users\й\desktop\visual studio\tablic\tablic\tsort.h(13): warning C4091: static : пропускается слева от "TSort", когда ни одна переменная не объявлена
+﻿  TTree.cpp
+c:\users\й\desktop\visual studio\tablic\tablic\ttree.cpp(94): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note:  см. объявление "strcpy"
   tablic.vcxproj -> C:\Users\й\Desktop\Visual Studio\tablic\Debug\tablic.exe

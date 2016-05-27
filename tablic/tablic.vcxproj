@@ -142,15 +142,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="THash.h" />
     <ClInclude Include="TRecord.h" />
     <ClInclude Include="TSort.h" />
     <ClInclude Include="TTable.h" />
+    <ClInclude Include="TTree.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="THash.cpp" />
     <ClCompile Include="TRecord.cpp" />
     <ClCompile Include="TSort.cpp" />
     <ClCompile Include="TTable.cpp" />
+    <ClCompile Include="TTree.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

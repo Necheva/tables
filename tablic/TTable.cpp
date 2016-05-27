@@ -97,14 +97,14 @@ void TTable::Print()
 	cout << " table" << endl;
 	for (int i = 0; i < count; i++)
 	{
-		cout << "(" << i << ") ";
-		cout << table[i].key << " | " << *table[i].Data << endl;
+		table[i].Print(i);
 	}
 }
 
 TTable::~TTable()
 {
-	delete[]table;
+	if (table != 0)
+		delete[]table;
 }
 
 void TTable::L_F_F(char *FileName)

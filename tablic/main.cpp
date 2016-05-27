@@ -5,6 +5,8 @@
 #include<locale.h>
 #include<string>
 #include<map>
+#include"THash.h"
+#include"TTree.h"
 using namespace std;
 
 int main()
@@ -72,17 +74,20 @@ int main()
 	EF = T.GetEffect();
 	cout << "Ёффективность работы в отсортированной таблице: " << EF << endl;
 	EF1 = T.GetEffect1();
-	cout << "Ёффективность работы в неотсортированной таблице: " << EF1 << endl;*/
+	cout << "Ёффективность работы в неотсортированной таблице: " << EF1 << endl;*/ 
 	int tmp=-1;
 	while (tmp != 7)
 	{
+		cout << "================================"<<endl;
 		cout << "ввыберите действие:" << endl;
-		cout << "1)вывести текст из файла" << endl;
+		cout << "1)ввести текст из файла" << endl;
 		cout << "2)отсортировать таблицу " << endl;
 		cout << "3)вывести отсортированную таблицу" << endl;
 		cout << "4)поиск ключа в неотсортированной таблице" << endl;
 		cout << "5)поиск ключа в отсортированной таблице" << endl;
 		cout << "6)вывести статистику" << endl;
+		cout << "8)hash table"<<endl;
+		cout << "9)tree table" << endl;
 		cout << "7)выход" << endl;
 		cin >> tmp;
 		switch (tmp)
@@ -145,6 +150,36 @@ int main()
 			EF1 = Q.GetEffect1();
 			cout << "Ёффективность работы в неотсортированной таблице: " << EF1 << endl;
 		}
+		break;
+		case 8:
+		{
+			char G[100];
+			THash H(50);
+			int EF2;
+			H.L_F_F("Text_Prog.txt");
+			H.Print();
+			cout << "input ";
+			cin >> G;
+			cout<<H.Search(G)<<endl;
+			EF2 = H.GetEffect2();
+			cout << "stat: " << EF2<<endl;
+		}
+		break;
+		case 9:
+		{
+			char G[100];
+			TreeTable TR;
+			TR.L_F_F("Text_Prog.txt");
+			TR.Print();
+			cout << "input ";
+			cin >> G;
+			TRecord *R = TR.Search(G);
+			if (R != 0)
+				R->Print(-1);
+			else
+				cout << "NOT FOUND" << endl;
+		}
+		break;
 		}
 	}
 	return 0;

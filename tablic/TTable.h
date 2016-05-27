@@ -2,8 +2,10 @@
 #include"TRecord.h"
 class TTable
 {
+protected:
 	TRecord* table;
 	int count;
+	int Size;
 	int Max_Size;
 	int Effectiv;
 	int Effectiv1;
@@ -26,8 +28,10 @@ public:
 	{
 		return Effectiv1;
 	};
+
 	int Search(char*); 
 	TRecord& operator[](int);
 	void Print();
 	friend class TSort;
+	//friend class TreeTable;
 };
